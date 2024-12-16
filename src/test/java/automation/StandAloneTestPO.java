@@ -2,7 +2,6 @@ package automation;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -49,27 +48,6 @@ public class StandAloneTestPO {
         LandingPage landingPage = new LandingPage(driver);
         landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
 
-
-    
-
-
-        //Scenario productlist
-        // String productName = "ZARA COAT 3";
-        // //verify list product is visible
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
-
-        
-        // List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
-
-        // WebElement product = products.stream().filter(prod -> 
-        // prod.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
-
-        // product.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
-
-        // wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-
         ProductListPage productListPage = new ProductListPage(driver);
         
         productListPage.addProduct(productName);
@@ -96,8 +74,6 @@ public class StandAloneTestPO {
         action.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")),"ind").build().perform();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
-
-        // driver.findElement(By.xpath("//*[@class='ta-results list-group ng-star-inserted']/child::button[2]")).click();
 
 
         /*

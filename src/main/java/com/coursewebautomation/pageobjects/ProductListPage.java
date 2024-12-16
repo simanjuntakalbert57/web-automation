@@ -18,26 +18,6 @@ public class ProductListPage {
             PageFactory.initElements(driver, this);
     }
 
-    /*
-     * //Scenario productlist
-        String productName = "ZARA COAT 3";
-        //verify list product is visible
-       
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
-
-        
-        List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
-
-        WebElement product = products.stream().filter(prod -> 
-        prod.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
-
-        product.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
-
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-     */
-
     @FindBy(css = ".mb-3")
     List<WebElement> productList;
 
