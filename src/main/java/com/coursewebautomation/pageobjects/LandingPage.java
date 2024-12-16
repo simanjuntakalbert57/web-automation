@@ -2,42 +2,43 @@ package com.coursewebautomation.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v129.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.coursewebautomation.abstractcomponents.AbstractComponent;
+public class LandingPage {
 
-public class LandingPage extends AbstractComponent {
     WebDriver driver;
+    /*
+     * 1. Menyimpan element
+     * 2. Hanya untuk melakukan action
+     * 3. Disarankan tidak digunakan untuk melakukan assertion
+     */
+
+    /*
+     *  driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
+        driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
+
+        driver.findElement(By.id("login")).click();
+     */
 
     public LandingPage(WebDriver driver){
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(id="userEmail")
+    
+    @FindBy(id = "userEmail")
     WebElement userEmail;
 
-    @FindBy(id="userPassword")
+    @FindBy(id = "userPassword")
     WebElement userPassword;
 
-    @FindBy(id="login")
+    @FindBy(id = "login")
     WebElement login;
 
-
-
-    public void loginApplication(String email, String password){
-        userEmail.sendKeys(email);
+    public void loginApplication(String username, String password){
+        userEmail.sendKeys(username);
         userPassword.sendKeys(password);
 
         login.click();
     }
-
-    public void goTo(){
-        driver.get("https://rahulshettyacademy.com/client");
-    }
-    
-
 }

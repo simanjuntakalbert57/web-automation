@@ -1,10 +1,8 @@
 package automation;
 
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,97 +12,124 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
-import com.coursewebautomation.pageobjects.CartPage;
-import com.coursewebautomation.pageobjects.CheckoutPage;
-import com.coursewebautomation.pageobjects.ConfirmationPage;
 import com.coursewebautomation.pageobjects.LandingPage;
 import com.coursewebautomation.pageobjects.ProductListPage;
 
-import components.BaseTest;
 
-public class StandAloneTestPO extends BaseTest{
-    // public static void main(String[] args) throws InterruptedException {
-    //      // Setup seleniumchromedriver
-    //     String productName = "ZARA COAT 3";
-         
-    //     // System.setProperty("webdriver.chrome.driver","/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
-    //     // WebDriver driver = new ChromeDriver();
-    //     // driver.manage().window().maximize();
+public class StandAloneTestPO {
+    public static void main(String[] args) throws InterruptedException {
+         // Setup seleniumchromedriver
+        System.setProperty("webdriver.chrome.driver","/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
 
-    //     // LandingPage landingPage = new LandingPage(driver);
-    //     // landingPage.goTo();
+        driver.get("https://rahulshettyacademy.com/client");
 
-    //     LandingPage landingPage = launchApplication();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        String productName = "ZARA COAT 3"; 
 
-
-    //     landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
-
-
-
-    //     ProductListPage productListPage = new ProductListPage(driver);
-
-    //     productListPage.addProduct(productName);
-
-    //     landingPage.goToCart();   
         
-    //     CartPage cartPage = new CartPage(driver);
+        //Scenario login
+        // driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
+        // driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
 
-    //     Boolean match = cartPage.verifyCheckoutProduct(productName);
+        // driver.findElement(By.id("login")).click();
 
-    //     Assert.assertTrue(match);
+        // String userEmail = "simanjuntakalbert57"+randInt+"@gmail.com";
 
-    //     cartPage.goToCheckoutPage();
+        //token -> never expired
+        //login utk token 
 
-    //     CheckoutPage checkoutPage = new CheckoutPage(driver);
-    //     checkoutPage.selectCountry("Indonesia");
-    //     checkoutPage.submitOrder();
+        /*
+         * 1. Preconditin di automation , add scenario untuk menambahkan/ increase barang -> seller side -> sebuah API utk increate stock (2000)
+         * 2. then run automation for checkout -> buyer side -> e2e test (2)
+         */
 
-    //     ConfirmationPage confirmationMessage = new ConfirmationPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
+
+
+    
+
+
+        //Scenario productlist
+        // String productName = "ZARA COAT 3";
+        // //verify list product is visible
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
+
         
-    //     Assert.assertTrue(confirmationMessage.getConfirmationMessage().equals("THANKYOU FOR THE ORDER."));
+        // List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
 
-    //     driver.close();
+        // WebElement product = products.stream().filter(prod -> 
+        // prod.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
 
-    // }
+        // product.findElement(By.cssSelector(".card-body button:last-of-type")).click();
+
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
+
+        // wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+
+        ProductListPage productListPage = new ProductListPage(driver);
+        
+        productListPage.addProduct(productName);
+
+        Thread.sleep(2000);
+
+        driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
+
+        
+        // scenario cartpage
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cartSection h3")));
+
+        List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
+
+        Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
+
+        Assert.assertTrue(match);
+
+        driver.findElement(By.cssSelector(".totalRow button")).click();
+
+        // scenario checkout
+        Actions action = new Actions(driver);
+
+        action.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")),"ind").build().perform();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+
+        // driver.findElement(By.xpath("//*[@class='ta-results list-group ng-star-inserted']/child::button[2]")).click();
 
 
-    @Test
-    public void createOrder() throws InterruptedException, IOException {
-        // Setup seleniumchromedriver
-       String productName = "ZARA COAT 3";
+        /*
+         * Melakukan looping untuk mencari negara yang diinginkan
+         * 
+         * String country = Indonesia
+         * if (element.gettext() == "indonesia")
+         * element.click()
+         */
 
-       LandingPage landingPage = launchApplication();
+        String couString = "Indonesia";
+
+        List<WebElement> countries = driver.findElements(By.xpath("//span[@class='ng-star-inserted']"));
+
+        System.out.println(countries.size());
+
+        WebElement country = countries.stream().filter(cont -> cont.getText().equalsIgnoreCase(couString)).findFirst().orElse(null);
+
+        country.click();
+
+        driver.findElement(By.cssSelector(".action__submit")).click();
 
 
-       landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
+        // Scenario confirmation page
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hero-primary")));
+
+        String confirmationPage = driver.findElement(By.cssSelector(".hero-primary")).getText();
+
+        Assert.assertTrue(confirmationPage.equals("THANKYOU FOR THE ORDER."));
 
 
+        driver.quit();
 
-       ProductListPage productListPage = new ProductListPage(driver);
-
-       productListPage.addProduct(productName);
-
-       landingPage.goToCart();   
-       
-       CartPage cartPage = new CartPage(driver);
-
-       Boolean match = cartPage.verifyCheckoutProduct(productName);
-
-       Assert.assertTrue(match);
-
-       cartPage.goToCheckoutPage();
-
-       CheckoutPage checkoutPage = new CheckoutPage(driver);
-       checkoutPage.selectCountry("Indonesia");
-       checkoutPage.submitOrder();
-
-       ConfirmationPage confirmationMessage = new ConfirmationPage(driver);
-       
-       Assert.assertTrue(confirmationMessage.getConfirmationMessage().equals("THANKYOU FOR THE ORDER."));
-
-       driver.close();
-
-   }
+    }
 }

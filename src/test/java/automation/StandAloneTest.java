@@ -2,8 +2,6 @@ package automation;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,11 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.coursewebautomation.pageobjects.CartPage;
-import com.coursewebautomation.pageobjects.CheckoutPage;
-import com.coursewebautomation.pageobjects.ConfirmationPage;
-import com.coursewebautomation.pageobjects.LandingPage;
-import com.coursewebautomation.pageobjects.ProductListPage;
 
 public class StandAloneTest {
     public static void main(String[] args) throws InterruptedException {
@@ -27,23 +20,20 @@ public class StandAloneTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        
+        driver.get("https://rahulshettyacademy.com/client");
 
         
-
         //Scenario login
-        // driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
-        // driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
+        driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
+        driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
 
-        // driver.findElement(By.id("login")).click();
-
-        LandingPage landingPage = new LandingPage(driver);
-        landingPage.goTo();
-        landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
+        driver.findElement(By.id("login")).click();
 
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
+
+        //Scenario productlist
         String productName = "ZARA COAT 3";
         //verify list product is visible
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
@@ -65,6 +55,7 @@ public class StandAloneTest {
         driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 
         
+        // scenario cartpage
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cartSection h3")));
 
         List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
@@ -75,30 +66,44 @@ public class StandAloneTest {
 
         driver.findElement(By.cssSelector(".totalRow button")).click();
 
+        // scenario checkout
         Actions action = new Actions(driver);
 
         action.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")),"ind").build().perform();
 
-        Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
 
-        String destination = "Indonesia";
+        // driver.findElement(By.xpath("//*[@class='ta-results list-group ng-star-inserted']/child::button[2]")).click();
+
+
+        /*
+         * Melakukan looping untuk mencari negara yang diinginkan
+         * 
+         * String country = Indonesia
+         * if (element.gettext() == "indonesia")
+         * element.click()
+         */
+
+        String couString = "Indonesia";
 
         List<WebElement> countries = driver.findElements(By.xpath("//span[@class='ng-star-inserted']"));
 
-        WebElement country = countries.stream().filter(cont -> cont.getText().equalsIgnoreCase(destination)).findFirst().orElse(null);
+        System.out.println(countries.size());
+
+        WebElement country = countries.stream().filter(cont -> cont.getText().equalsIgnoreCase(couString)).findFirst().orElse(null);
 
         country.click();
 
-        driver.findElement(By.xpath("(//button[contains(@class,'ta-item')])[2]")).click();
-
         driver.findElement(By.cssSelector(".action__submit")).click();
 
+
+        // Scenario confirmation page
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hero-primary")));
 
-        String confirmationMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
-        
-        Assert.assertTrue(confirmationMessage.equals("THANKYOU FOR THE ORDER."));
+        String confirmationPage = driver.findElement(By.cssSelector(".hero-primary")).getText();
+
+        Assert.assertTrue(confirmationPage.equals("THANKYOU FOR THE ORDER."));
+
 
         driver.quit();
 
