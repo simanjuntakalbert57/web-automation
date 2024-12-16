@@ -26,6 +26,11 @@
             <version>7.4.0</version> <!-- Versi terbaru -->
             <scope>test</scope>
         </dependency>
+        <!-- <dependency>
+            <groupId>com.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.2.1</version>
+        </dependency> -->
     </dependencies>
 
 </project>
