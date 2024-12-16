@@ -1,9 +1,7 @@
 package automation;
 
-import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.coursewebautomation.pageobjects.CartPage;
@@ -34,7 +32,7 @@ public class StandAloneTest {
         landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
 
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         String productName = "ZARA COAT 3";
         //verify list product is visible

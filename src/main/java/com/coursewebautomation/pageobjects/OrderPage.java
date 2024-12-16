@@ -2,7 +2,6 @@ package com.coursewebautomation.pageobjects;
 
 import java.util.List;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
