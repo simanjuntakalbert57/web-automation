@@ -19,6 +19,9 @@ public class AbstractComponent {
     @FindBy(css="[routerlink*='cart']")
     WebElement cartButton;
 
+    @FindBy(css = "[routerlink*='myorders']")
+    WebElement cartOrders;
+
     public void waitForVisibilityElement(By findBy){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         //verify list product is visible
@@ -34,4 +37,10 @@ public class AbstractComponent {
     public void goToCart(){
         cartButton.click();
     }
+
+    public void goToOrders(){
+        cartOrders.click();
+    }
+
+
 }

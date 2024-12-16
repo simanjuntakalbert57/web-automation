@@ -1,18 +1,6 @@
 package automation;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -38,9 +26,7 @@ public class StandAloneTestPO extends BaseTest{
 
     //     LandingPage landingPage = launchApplication();
 
-
     //     landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
-
 
 
     //     ProductListPage productListPage = new ProductListPage(driver);
@@ -77,10 +63,7 @@ public class StandAloneTestPO extends BaseTest{
 
        LandingPage landingPage = launchApplication();
 
-
        landingPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
-
-
 
        ProductListPage productListPage = new ProductListPage(driver);
 
