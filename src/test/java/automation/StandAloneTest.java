@@ -46,87 +46,59 @@ public class StandAloneTest {
 
         String productName = "ZARA COAT 3";
         //verify list product is visible
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
 
         
-        // List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
+        List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
 
-        ProductListPage productListPage = new ProductListPage(driver);
+        WebElement product = products.stream().filter(prod -> 
+        prod.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
 
-        // List<WebElement> products = productListPage.getProductList();
+        product.findElement(By.cssSelector(".card-body button:last-of-type")).click();
 
-        productListPage.addProduct(productName);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
 
-        
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
 
-        // WebElement product = products.stream().filter(prod -> 
-        // prod.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
+        Thread.sleep(2000);
 
-        // product.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-
-        // Verifikasi loading page nya invisible
-        // Verifikasi toaster nya muncul
-
-
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
-
-        // wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-
-        // Thread.sleep(2000);
-
-        // driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
-
-        landingPage.goToCart();   
-        
-        CartPage cartPage = new CartPage(driver);
-
-        Boolean match = cartPage.verifyCheckoutProduct(productName);
+        driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 
         
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cartSection h3")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cartSection h3")));
 
-        // List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
+        List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
 
-        // Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
+        Boolean match = cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
 
         Assert.assertTrue(match);
 
-        cartPage.goToCheckoutPage();
+        driver.findElement(By.cssSelector(".totalRow button")).click();
 
-        CheckoutPage checkoutPage = new CheckoutPage(driver);
-        checkoutPage.getSelectedCountry("Indonesia");
-        checkoutPage.submitOrder();
+        Actions action = new Actions(driver);
 
-        // driver.findElement(By.cssSelector(".totalRow button")).click();
+        action.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")),"ind").build().perform();
 
-      
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+
+        String destination = "Indonesia";
+
+        List<WebElement> countries = driver.findElements(By.xpath("//span[@class='ng-star-inserted']"));
+
+        WebElement country = countries.stream().filter(cont -> cont.getText().equalsIgnoreCase(destination)).findFirst().orElse(null);
+
+        country.click();
+
+        driver.findElement(By.xpath("(//button[contains(@class,'ta-item')])[2]")).click();
+
+        driver.findElement(By.cssSelector(".action__submit")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hero-primary")));
+
+        String confirmationMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
         
-        // Actions action = new Actions(driver);
-
-        // action.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")),"ind").build().perform();
-
-        // Thread.sleep(2000);
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
-
-        // String destination = "Indonesia";
-
-        // List<WebElement> countries = driver.findElements(By.xpath("//span[@class='ng-star-inserted']"));
-
-        // WebElement country = countries.stream().filter(cont -> cont.getText().equalsIgnoreCase(destination)).findFirst().orElse(null);
-
-        // country.click();
-
-        // driver.findElement(By.xpath("(//button[contains(@class,'ta-item')])[2]")).click();
-
-        // driver.findElement(By.cssSelector(".action__submit")).click();
-
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hero-primary")));
-
-        // String confirmationMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
-
-        ConfirmationPage confirmationMessage = new ConfirmationPage(driver);
-        
-        Assert.assertTrue(confirmationMessage.getConfirmationMessage().equals("THANKYOU FOR THE ORDER."));
+        Assert.assertTrue(confirmationMessage.equals("THANKYOU FOR THE ORDER."));
 
         driver.quit();
 
