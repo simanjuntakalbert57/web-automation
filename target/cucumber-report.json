@@ -1,0 +1,211 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Buyer Landed to website",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2402622000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Buyer landing to ecommerce",
+            "match": {
+              "location": "stepDefenitions.StepDefenitionsImpl.landingPage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-12-17T09:28:47.195Z",
+        "line": 15,
+        "name": "Create Order positive case",
+        "description": "",
+        "id": "purchase-the-order-from-the-ecommerce;create-order-positive-case;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 181997000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Buyer logged to website email simanjuntakalbert57@gmail.com and password XBf@rWNvByn!#K8",
+            "match": {
+              "arguments": [
+                {
+                  "val": "simanjuntakalbert57@gmail.com",
+                  "offset": 30
+                },
+                {
+                  "val": "XBf@rWNvByn!#K8",
+                  "offset": 73
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.buyerLogin(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2627254000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I add product ZARA COAT 3 to Create",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ZARA COAT 3",
+                  "offset": 14
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.buyerAddProduct(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 550962000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I checkout ZARA COAT 3 and submit order",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ZARA COAT 3",
+                  "offset": 11
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.checkoutProduct(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 140971000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "\"THANKYOU FOR THE ORDER.\" message is displayed on confirmation page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"THANKYOU FOR THE ORDER.\"",
+                  "offset": 0
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.verifyConfirmationMessage(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "Buyer Landed to website",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2548163000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Buyer landing to ecommerce",
+            "match": {
+              "location": "stepDefenitions.StepDefenitionsImpl.landingPage()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-12-17T09:28:53.132Z",
+        "line": 25,
+        "name": "Seller can see Order History",
+        "description": "",
+        "id": "purchase-the-order-from-the-ecommerce;seller-can-see-order-history;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 197915000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Buyer logged to website email simanjuntakalbert57@gmail.com and password XBf@rWNvByn!#K8",
+            "match": {
+              "arguments": [
+                {
+                  "val": "simanjuntakalbert57@gmail.com",
+                  "offset": 30
+                },
+                {
+                  "val": "XBf@rWNvByn!#K8",
+                  "offset": 73
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.buyerLogin(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 255536000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I go to \"OrderPage\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"OrderPage\"",
+                  "offset": 8
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.redirectHeader(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 128780000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Verify ZARA COAT 3 exist in order history",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ZARA COAT 3",
+                  "offset": 7
+                }
+              ],
+              "location": "stepDefenitions.StepDefenitionsImpl.verifyProductOrder(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Purchase the order from the ecommerce",
+    "description": "",
+    "id": "purchase-the-order-from-the-ecommerce",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/CreateOrder.feature",
+    "tags": []
+  }
+]

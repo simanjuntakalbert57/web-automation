@@ -1,0 +1,25 @@
+Feature: Purchase the order from the ecommerce
+
+
+Background: Buyer Landed to website
+    Given Buyer landing to ecommerce 
+
+Scenario Outline: Create Order positive case
+    Given Buyer logged to website email <email> and password <password>
+    When I add product <product> to Create
+    And I checkout <product> and submit order
+    Then "THANKYOU FOR THE ORDER." message is displayed on confirmation page
+
+    Examples:
+    |email                         |password         | product      |
+    |simanjuntakalbert57@gmail.com | XBf@rWNvByn!#K8 |ZARA COAT 3   |
+
+
+Scenario Outline: Seller can see Order History
+    Given Buyer logged to website email <email> and password <password>
+    When I go to "OrderPage"
+    Then Verify <product> exist in order history
+
+    Examples:
+    |email                         |password         | product      |
+    |simanjuntakalbert57@gmail.com | XBf@rWNvByn!#K8 |ZARA COAT 3   |
