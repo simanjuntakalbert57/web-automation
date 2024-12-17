@@ -5,23 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage {
+import com.coursewebautomation.abstractcomponents.AbstractComponent;
+
+public class LandingPage extends AbstractComponent {
 
     WebDriver driver;
-    /*
-     * 1. Menyimpan element
-     * 2. Hanya untuk melakukan action
-     * 3. Disarankan tidak digunakan untuk melakukan assertion
-     */
-
-    /*
-     *  driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
-        driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
-
-        driver.findElement(By.id("login")).click();
-     */
 
     public LandingPage(WebDriver driver){
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
