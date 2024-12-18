@@ -19,6 +19,11 @@ public class AbstractComponent {
     @FindBy(css = "[routerlink*='cart']")
     WebElement cartButton;
 
+    @FindBy(css="[routerlink='/dashboard/myorders']")
+    WebElement cartOrders;
+
+    By orderHeader = By.cssSelector("[routerlink='/dashboard/myorders']");
+
     public void waitForVisibilityElement(By findBy){
          WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
          wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
@@ -26,5 +31,10 @@ public class AbstractComponent {
 
     public void goToCart(){
         cartButton.click();
+    }
+
+    public void goToOrderPage() throws InterruptedException{
+        waitForVisibilityElement(orderHeader);
+        cartOrders.click();
     }
 }
