@@ -1,0 +1,8 @@
+com/coursewebautomation/pageobjects/CheckoutPage.class
+com/coursewebautomation/pageobjects/ConfirmationPage.class
+com/coursewebautomation/Main.class
+com/coursewebautomation/abstractcomponents/AbstractComponent.class
+com/coursewebautomation/pageobjects/ProductListPage.class
+com/coursewebautomation/pageobjects/CartPage.class
+com/coursewebautomation/pageobjects/OrderPage.class
+com/coursewebautomation/pageobjects/LandingPage.class

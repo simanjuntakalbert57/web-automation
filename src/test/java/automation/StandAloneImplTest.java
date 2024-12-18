@@ -12,7 +12,7 @@ import com.coursewebautomation.pageobjects.ProductListPage;
 
 import components.BaseTest;
 
-public class StandAloneTestPO extends BaseTest{
+public class StandAloneImplTest extends BaseTest{
     // public static void main(String[] args) throws InterruptedException {
     //      // Setup seleniumchromedriver
     //     String productName = "ZARA COAT 3";

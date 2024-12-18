@@ -20,7 +20,7 @@ public class BaseTest {
         FileInputStream inputFile = new FileInputStream("/Users/bytedance/CourseQAAutomation/coursewebautomation/src/main/resources/GlobalData.properties");
 
         properties.load(inputFile);
-        String browserName = properties.getProperty("browser");
+        String browserName = properties.getProperty("browser")!=null?System.getProperty("browser") : properties.getProperty("browser");
 
         if (browserName.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver","/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");

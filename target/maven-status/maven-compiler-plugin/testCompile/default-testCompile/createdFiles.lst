@@ -1,0 +1,11 @@
+locator/Alert.class
+automation/StandAloneTest.class
+locator/Locator2.class
+automation/StandAloneNGTest.class
+runners/TestRunner.class
+automation/StandAloneImplTest.class
+automation/JavaStream.class
+locator/Locator1.class
+stepDefenitions/StepDefenitionsImpl.class
+locator/Locator3.class
+components/BaseTest.class

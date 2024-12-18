@@ -16,7 +16,7 @@ import com.coursewebautomation.pageobjects.ProductListPage;
 
 import components.BaseTest;
 
-public class StandAloneTestTestNG extends BaseTest{
+public class StandAloneNGTest extends BaseTest{
     String productName = "ZARA COAT 3";
 
 
