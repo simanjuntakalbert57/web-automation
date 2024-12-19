@@ -56,5 +56,45 @@
             <scope>test</scope>
         </dependency> 
     </dependencies>
+    <profiles>
+        <profile>
+            <id>Testng</id>
+            <build>
+            <pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
+                        <configuration>
+                            <suiteXMLFiles>
+                                <suiteXmlFile>testSuites/testng.xml</suiteXmlFile>
+                            </suiteXMLFiles>
+                        </configuration>
+                    </plugin>
+            </plugins>
+            </pluginManagement>
+            </build>
+        </profile>
+         <profile>
+            <id>Testng2</id>
+            <build>
+            <pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.22.0</version>
+                        <configuration>
+                            <suiteXMLFiles>
+                            <suiteXMLFile>testSuites/testng2.xml</suiteXMLFile>
+                            </suiteXMLFiles>
+                        </configuration>
+                    </plugin>
+            </plugins>
+            </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
