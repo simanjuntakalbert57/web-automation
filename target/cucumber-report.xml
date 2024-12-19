@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="19.255">
-    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case" time="10.248">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="3" time="27.576">
+    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case" time="12.752">
         <system-out>
             <![CDATA[Given Buyer landing to ecommerce............................................passed
 Given Buyer logged to website email simanjuntakalbert57@gmail.com and password XBf@rWNvByn!#K8.passed
@@ -10,7 +10,7 @@ Then "THANKYOU FOR THE ORDER." message is displayed on confirmation page....pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case 2" time="8.944">
+    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case 2" time="14.766">
         <system-out>
             <![CDATA[Given Buyer landing to ecommerce............................................passed
 Given Buyer logged to website email simanjuntakalbert57@gmail.com and password XBf@rWNvByn!#K8.passed
@@ -19,5 +19,8 @@ And I checkout ADIDAS ORIGINAL and submit order.............................pass
 Then "THANKYOU FOR THE ORDER." message is displayed on confirmation page....passed
 ]]>
         </system-out>
+    </testcase>
+    <testcase classname="Purchase the order from the ecommerce" name="Order History" time="0">
+        <skipped message="The scenario has no steps"/>
     </testcase>
 </testsuite>

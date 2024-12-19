@@ -173,4 +173,9 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.background({
+  "name": "Buyer Landed to website",
+  "description": "",
+  "keyword": "Background"
+});
 });

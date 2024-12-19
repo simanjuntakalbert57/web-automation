@@ -1,8 +1,11 @@
+/Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/runners/TestRunner.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/automation/StandAloneTest.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/locator/Alert.java
+/Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/automation/StandAloneNGTest.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/automation/JavaStream.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/locator/Locator1.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/components/BaseTest.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/locator/Locator3.java
-/Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/automation/StandAloneTestPO.java
+/Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/stepdefenitions/StepDefenitionImpl.java
 /Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/locator/Locator2.java
+/Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/java/automation/HandleWindow.java

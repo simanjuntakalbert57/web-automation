@@ -18,7 +18,7 @@ import com.coursewebautomation.pageobjects.ProductListPage;
 import components.BaseTest;
 
 
-public class StandAloneTestPO extends BaseTest {
+public class StandAloneNGTest extends BaseTest {
     String coutryString = "Indonesia";
 
     @Test(dataProvider = "getData")

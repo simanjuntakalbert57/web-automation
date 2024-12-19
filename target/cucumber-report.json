@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3976734000,
+              "duration": 1468914000,
               "status": "passed"
             },
             "line": 5,
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-12-19T14:14:38.895Z",
+        "start_timestamp": "2024-12-19T16:35:54.684Z",
         "line": 15,
         "name": "Create Order positive case",
         "description": "",
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 178877000,
+              "duration": 5272324000,
               "status": "passed"
             },
             "line": 8,
@@ -56,7 +56,7 @@
           },
           {
             "result": {
-              "duration": 4774502000,
+              "duration": 4699795000,
               "status": "passed"
             },
             "line": 9,
@@ -74,7 +74,7 @@
           },
           {
             "result": {
-              "duration": 750189000,
+              "duration": 745268000,
               "status": "passed"
             },
             "line": 10,
@@ -92,7 +92,7 @@
           },
           {
             "result": {
-              "duration": 541217000,
+              "duration": 533359000,
               "status": "passed"
             },
             "line": 11,
@@ -119,7 +119,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2730172000,
+              "duration": 8547225000,
               "status": "passed"
             },
             "line": 5,
@@ -132,7 +132,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-12-19T14:14:49.147Z",
+        "start_timestamp": "2024-12-19T16:36:07.441Z",
         "line": 16,
         "name": "Create Order positive case",
         "description": "",
@@ -142,7 +142,7 @@
         "steps": [
           {
             "result": {
-              "duration": 182155000,
+              "duration": 190274000,
               "status": "passed"
             },
             "line": 8,
@@ -164,7 +164,7 @@
           },
           {
             "result": {
-              "duration": 4746302000,
+              "duration": 4742404000,
               "status": "passed"
             },
             "line": 9,
@@ -182,7 +182,7 @@
           },
           {
             "result": {
-              "duration": 753378000,
+              "duration": 753980000,
               "status": "passed"
             },
             "line": 10,
@@ -200,7 +200,7 @@
           },
           {
             "result": {
-              "duration": 529988000,
+              "duration": 528122000,
               "status": "passed"
             },
             "line": 11,
@@ -217,6 +217,24 @@
             "keyword": "Then "
           }
         ]
+      },
+      {
+        "line": 4,
+        "name": "Buyer Landed to website",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2024-12-19T16:36:22.208Z",
+        "line": 18,
+        "name": "Order History",
+        "description": "",
+        "id": "purchase-the-order-from-the-ecommerce;order-history",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": []
       }
     ],
     "name": "Purchase the order from the ecommerce",
