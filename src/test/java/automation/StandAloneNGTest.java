@@ -3,7 +3,6 @@ package automation;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
