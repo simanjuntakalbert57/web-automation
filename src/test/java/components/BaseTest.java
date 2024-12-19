@@ -23,7 +23,6 @@ public class BaseTest {
         if (browserName.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver","/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
             driver = new ChromeDriver();
-            System.out.println("ini chromedriver");
             return driver;
         }else if (browserName.equals("firefox")) {
             System.out.println("ini firefox");
