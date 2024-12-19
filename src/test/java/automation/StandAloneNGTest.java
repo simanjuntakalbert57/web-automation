@@ -3,7 +3,6 @@ package automation;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,7 +17,7 @@ import com.coursewebautomation.pageobjects.ProductListPage;
 import components.BaseTest;
 
 
-public class StandAloneTestPO extends BaseTest {
+public class StandAloneNGTest extends BaseTest {
     String coutryString = "Indonesia";
 
     @Test(dataProvider = "getData")
