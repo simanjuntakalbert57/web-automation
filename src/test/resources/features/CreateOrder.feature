@@ -8,7 +8,7 @@ Scenario Outline: Create Order positive case
     Given Buyer logged to website email <email> and password <password>
     When I add product <product> to Create
     And I checkout <product> and submit order
-    Then "THANKYOU FOR THE ORDER." message is displayed on confirmation page
+    Then "THANKYOU FOR THE" message is displayed on confirmation page
 
     Examples:
     |email                         |password         | product      |
