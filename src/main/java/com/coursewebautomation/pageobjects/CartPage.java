@@ -14,7 +14,7 @@ import com.coursewebautomation.abstractcomponents.AbstractComponent;
 public class CartPage extends AbstractComponent {
     WebDriver driver;
 
-    // add some dummy text
+    // add some dummy textewrwrf
     public CartPage(WebDriver driver){
         super(driver);
         this.driver = driver;
