@@ -3,7 +3,7 @@
     <suite name="Annotation Execution Suite" >
         <test name="MyTestGroup">
             <classes>
-                <class name="automation.StandAloneNG1Test" />
+                <class name="automation.StandAloneNGTest" />
             </classes>
         </test>
     </suite>

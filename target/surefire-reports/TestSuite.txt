@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 38.22 s -- in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 56.852 s <<< FAILURE! - in TestSuite
+automation.StandAloneNGTest.submitOrder[{password=XBf@rWNvByn!#K8, email=simanjuntakalbert57@gmail.com, productName=ADIDAS ORIGINAL}](1)  Time elapsed: 13.702 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":".action__submit"}
+  (Session info: chrome=131.0.6778.205)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.1.1', java.version: '11.0.21'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dc9c30e2562ae242dd2bc6554fefc008, findElement {using=css selector, value=.action__submit}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: /var/folders/_8/v_b5zj050r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57120}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57120/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc9c30e2562ae242dd2bc6554fefc008
+	at automation.StandAloneNGTest.submitOrder(StandAloneNGTest.java:44)
+

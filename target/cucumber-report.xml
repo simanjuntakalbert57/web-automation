@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="2" time="14.987">
-    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case" time="14.926">
-        <failure message="element click intercepted: Element &lt;button _ngcontent-qaj-c33=&quot;&quot; routerlink=&quot;/dashboard/cart&quot; class=&quot;btn btn-custom&quot; style=&quot;margin-top: -10px;&quot; tabindex=&quot;0&quot;&gt;...&lt;/button&gt; is not clickable at point (959, 26). Other element would receive the click: &lt;div _ngcontent-qaj-c31=&quot;&quot; class=&quot;ngx-spinner-overlay ng-tns-c31-1 ng-trigger ng-trigger-fadeIn ng-star-inserted ng-animating&quot; style=&quot;background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed;&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=131.0.6778.140)&#10;Build info: version: '4.27.0', revision: 'd6e718d134'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.1.1', java.version: '11.0.21'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [f2d0f44890b0eca664fa9aa6667a12e2, clickElement {id=f.72608105B7B3AE1326EBF0B04B67E9DB.d.6DC925C42DD5114F13C3F505E6426946.e.73}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: /var/folders/_8/v_b5zj050r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61962}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:61962/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on mac (f2d0f44890b0eca664fa9aa6667a12e2)] -&gt; css selector: [routerlink*='cart']]&#10;Session ID: f2d0f44890b0eca664fa9aa6667a12e2" type="org.openqa.selenium.ElementClickInterceptedException">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="2" time="42.747">
+    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case" time="42.704">
+        <failure message="expected [true] but found [false]" type="java.lang.AssertionError">
             <![CDATA[Given Buyer landing to ecommerce............................................passed
 Given Buyer logged to website email simanjuntakalbert57@gmail.com and password XBf@rWNvByn!#K8.passed
-When I add product ZARA COAT 3 to Create....................................failed
-And I checkout ZARA COAT 3 and submit order.................................skipped
-Then "THANKYOU FOR THE ORDER." message is displayed on confirmation page....skipped
+When I add product ZARA COAT 3 to Create....................................passed
+And I checkout ZARA COAT 3 and submit order.................................passed
+Then "THANKYOU FOR THE" message is displayed on confirmation page...........failed
 
 StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-qaj-c33="" routerlink="/dashboard/cart" class="btn btn-custom" style="margin-top: -10px;" tabindex="0">...</button> is not clickable at point (959, 26). Other element would receive the click: <div _ngcontent-qaj-c31="" class="ngx-spinner-overlay ng-tns-c31-1 ng-trigger ng-trigger-fadeIn ng-star-inserted ng-animating" style="background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed;">...</div>
-  (Session info: chrome=131.0.6778.140)
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.1.1', java.version: '11.0.21'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f2d0f44890b0eca664fa9aa6667a12e2, clickElement {id=f.72608105B7B3AE1326EBF0B04B67E9DB.d.6DC925C42DD5114F13C3F505E6426946.e.73}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: /var/folders/_8/v_b5zj050r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61962}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:61962/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (f2d0f44890b0eca664fa9aa6667a12e2)] -> css selector: [routerlink*='cart']]
-Session ID: f2d0f44890b0eca664fa9aa6667a12e2
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy12.click(Unknown Source)
-	at com.coursewebautomation.abstractcomponents.AbstractComponent.goToCart(AbstractComponent.java:33)
-	at stepdefenitions.StepDefenitionImpl.buyerAddProduct(StepDefenitionImpl.java:37)
-	at ✽.I add product ZARA COAT 3 to Create(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:9)
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at org.testng.Assert.assertTrue(Assert.java:55)
+	at stepdefenitions.StepDefenitionImpl.verifyConfirmationMessage(StepDefenitionImpl.java:58)
+	at ✽."THANKYOU FOR THE" message is displayed on confirmation page(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:11)
 ]]>
         </failure>
     </testcase>
