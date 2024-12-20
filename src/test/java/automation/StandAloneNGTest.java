@@ -45,7 +45,7 @@ public class StandAloneNGTest extends BaseTest {
 
         // scenario confirmation page
         ConfirmationPage confirmationPage = new ConfirmationPage(driver);
-        Assert.assertTrue(confirmationPage.getConfirmationMessage().equals("THANKYOU FOR THE ORDER."));
+        Assert.assertTrue(confirmationPage.getConfirmationMessage().equals("THANKYOU FOR"));
 
         driver.quit();
     }
