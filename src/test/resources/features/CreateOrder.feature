@@ -12,7 +12,7 @@ Scenario Outline: Create Order positive case
 
     Examples:
     |email                         |password         | product      |
-    |simanjuntakalbert57@gmail.com | XBf@rWNvByn!#K8 |ZARA COAT 34   |
+    |simanjuntakalbert57@gmail.com | XBf@rWNvByn!#K8 |ZARA COAT 3  |
     # |simanjuntakalbert57@gmail.com | XBf@rWNvByn!#K8 |ADIDAS ORIGINAL   |
 
 Scenario: Order History
