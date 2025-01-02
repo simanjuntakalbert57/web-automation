@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="2" time="42.747">
-    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case" time="42.704">
-        <failure message="expected [true] but found [false]" type="java.lang.AssertionError">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="2" time="10.312">
+    <testcase classname="Purchase the order from the ecommerce" name="Create Order positive case" time="10.245">
+        <failure message="" type="java.lang.NullPointerException">
             <![CDATA[Given Buyer landing to ecommerce............................................passed
 Given Buyer logged to website email simanjuntakalbert57@gmail.com and password XBf@rWNvByn!#K8.passed
-When I add product ZARA COAT 3 to Create....................................passed
-And I checkout ZARA COAT 3 and submit order.................................passed
-Then "THANKYOU FOR THE" message is displayed on confirmation page...........failed
+When I add product ZARA COAT 34 to Create...................................failed
+And I checkout ZARA COAT 34 and submit order................................skipped
+Then "THANKYOU FOR THE ORDER." message is displayed on confirmation page....skipped
 
 StackTrace:
-java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at org.testng.Assert.assertTrue(Assert.java:55)
-	at stepdefenitions.StepDefenitionImpl.verifyConfirmationMessage(StepDefenitionImpl.java:58)
-	at ✽."THANKYOU FOR THE" message is displayed on confirmation page(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:11)
+java.lang.NullPointerException
+	at com.coursewebautomation.pageobjects.ProductListPage.addProduct(ProductListPage.java:43)
+	at stepdefenitions.StepDefenitionImpl.buyerAddProduct(StepDefenitionImpl.java:36)
+	at ✽.I add product ZARA COAT 34 to Create(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:9)
 ]]>
         </failure>
     </testcase>

@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 36416800000,
+              "duration": 7893971000,
               "status": "passed"
             },
             "line": 5,
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-12-20T13:28:24.189Z",
+        "start_timestamp": "2025-01-02T13:55:29.723Z",
         "line": 15,
         "name": "Create Order positive case",
         "description": "",
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 202708000,
+              "duration": 229238000,
               "status": "passed"
             },
             "line": 8,
@@ -56,15 +56,16 @@
           },
           {
             "result": {
-              "duration": 4741962000,
-              "status": "passed"
+              "error_message": "java.lang.NullPointerException\n\tat com.coursewebautomation.pageobjects.ProductListPage.addProduct(ProductListPage.java:43)\n\tat stepdefenitions.StepDefenitionImpl.buyerAddProduct(StepDefenitionImpl.java:36)\n\tat ✽.I add product ZARA COAT 34 to Create(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:9)\n",
+              "duration": 2091196000,
+              "status": "failed"
             },
             "line": 9,
-            "name": "I add product ZARA COAT 3 to Create",
+            "name": "I add product ZARA COAT 34 to Create",
             "match": {
               "arguments": [
                 {
-                  "val": "ZARA COAT 3",
+                  "val": "ZARA COAT 34",
                   "offset": 14
                 }
               ],
@@ -74,15 +75,15 @@
           },
           {
             "result": {
-              "duration": 750941000,
-              "status": "passed"
+              "duration": 347000,
+              "status": "skipped"
             },
             "line": 10,
-            "name": "I checkout ZARA COAT 3 and submit order",
+            "name": "I checkout ZARA COAT 34 and submit order",
             "match": {
               "arguments": [
                 {
-                  "val": "ZARA COAT 3",
+                  "val": "ZARA COAT 34",
                   "offset": 11
                 }
               ],
@@ -92,16 +93,15 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: expected [true] but found [false]\n\tat org.testng.Assert.fail(Assert.java:99)\n\tat org.testng.Assert.failNotEquals(Assert.java:1037)\n\tat org.testng.Assert.assertTrue(Assert.java:45)\n\tat org.testng.Assert.assertTrue(Assert.java:55)\n\tat stepdefenitions.StepDefenitionImpl.verifyConfirmationMessage(StepDefenitionImpl.java:58)\n\tat ✽.\"THANKYOU FOR THE\" message is displayed on confirmation page(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:11)\n",
-              "duration": 554483000,
-              "status": "failed"
+              "duration": 287000,
+              "status": "skipped"
             },
             "line": 11,
-            "name": "\"THANKYOU FOR THE\" message is displayed on confirmation page",
+            "name": "\"THANKYOU FOR THE ORDER.\" message is displayed on confirmation page",
             "match": {
               "arguments": [
                 {
-                  "val": "\"THANKYOU FOR THE\"",
+                  "val": "\"THANKYOU FOR THE ORDER.\"",
                   "offset": 0
                 }
               ],
@@ -120,7 +120,7 @@
         "steps": []
       },
       {
-        "start_timestamp": "2024-12-20T13:29:06.897Z",
+        "start_timestamp": "2025-01-02T13:55:39.974Z",
         "line": 18,
         "name": "Order History",
         "description": "",

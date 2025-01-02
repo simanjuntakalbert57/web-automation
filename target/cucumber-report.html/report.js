@@ -22,7 +22,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "name": "\"THANKYOU FOR THE\" message is displayed on confirmation page",
+  "name": "\"THANKYOU FOR THE ORDER.\" message is displayed on confirmation page",
   "keyword": "Then "
 });
 formatter.examples({
@@ -41,7 +41,7 @@ formatter.examples({
       "cells": [
         "simanjuntakalbert57@gmail.com",
         "XBf@rWNvByn!#K8",
-        "ZARA COAT 3"
+        "ZARA COAT 34"
       ]
     }
   ]
@@ -77,35 +77,35 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I add product ZARA COAT 3 to Create",
+  "name": "I add product ZARA COAT 34 to Create",
   "keyword": "When "
 });
 formatter.match({
   "location": "stepdefenitions.StepDefenitionImpl.buyerAddProduct(java.lang.String)"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.NullPointerException\n\tat com.coursewebautomation.pageobjects.ProductListPage.addProduct(ProductListPage.java:43)\n\tat stepdefenitions.StepDefenitionImpl.buyerAddProduct(StepDefenitionImpl.java:36)\n\tat ✽.I add product ZARA COAT 34 to Create(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:9)\n",
+  "status": "failed"
 });
 formatter.step({
-  "name": "I checkout ZARA COAT 3 and submit order",
+  "name": "I checkout ZARA COAT 34 and submit order",
   "keyword": "And "
 });
 formatter.match({
   "location": "stepdefenitions.StepDefenitionImpl.buyerCheckoutProduct(java.lang.String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "\"THANKYOU FOR THE\" message is displayed on confirmation page",
+  "name": "\"THANKYOU FOR THE ORDER.\" message is displayed on confirmation page",
   "keyword": "Then "
 });
 formatter.match({
   "location": "stepdefenitions.StepDefenitionImpl.verifyConfirmationMessage(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: expected [true] but found [false]\n\tat org.testng.Assert.fail(Assert.java:99)\n\tat org.testng.Assert.failNotEquals(Assert.java:1037)\n\tat org.testng.Assert.assertTrue(Assert.java:45)\n\tat org.testng.Assert.assertTrue(Assert.java:55)\n\tat stepdefenitions.StepDefenitionImpl.verifyConfirmationMessage(StepDefenitionImpl.java:58)\n\tat ✽.\"THANKYOU FOR THE\" message is displayed on confirmation page(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:11)\n",
-  "status": "failed"
+  "status": "skipped"
 });
 formatter.background({
   "name": "Buyer Landed to website",
