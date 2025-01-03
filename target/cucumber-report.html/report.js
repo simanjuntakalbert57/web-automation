@@ -41,7 +41,7 @@ formatter.examples({
       "cells": [
         "simanjuntakalbert57@gmail.com",
         "XBf@rWNvByn!#K8",
-        "ZARA COAT 34"
+        "ZARA COAT 3"
       ]
     }
   ]
@@ -77,18 +77,18 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I add product ZARA COAT 34 to Create",
+  "name": "I add product ZARA COAT 3 to Create",
   "keyword": "When "
 });
 formatter.match({
   "location": "stepdefenitions.StepDefenitionImpl.buyerAddProduct(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.NullPointerException\n\tat com.coursewebautomation.pageobjects.ProductListPage.addProduct(ProductListPage.java:43)\n\tat stepdefenitions.StepDefenitionImpl.buyerAddProduct(StepDefenitionImpl.java:36)\n\tat ✽.I add product ZARA COAT 34 to Create(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:9)\n",
+  "error_message": "java.lang.NullPointerException\n\tat com.coursewebautomation.pageobjects.ProductListPage.addProduct(ProductListPage.java:43)\n\tat stepdefenitions.StepDefenitionImpl.buyerAddProduct(StepDefenitionImpl.java:36)\n\tat ✽.I add product ZARA COAT 3 to Create(file:///Users/bytedance/CourseQAAutomation/coursewebautomation/src/test/resources/features/CreateOrder.feature:9)\n",
   "status": "failed"
 });
 formatter.step({
-  "name": "I checkout ZARA COAT 34 and submit order",
+  "name": "I checkout ZARA COAT 3 and submit order",
   "keyword": "And "
 });
 formatter.match({
